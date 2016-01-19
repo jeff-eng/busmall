@@ -13,12 +13,13 @@ User Stories(MVP)
 - The research participant to respond honestly and not race through clicking on the images just to finish the task.  There needs to  be a perceived benefit to the participant/future customer.
 
 * As a developer,  I want:
-- To implement a constructor function, so that I can reuse code and eliminate duplication in my JavaScript.
-- I want to use object oriented programming to build this app so that the app will be more effective and code will be easier to read and understand.
-- The images that are displayed on the page to have the same dimensions, aspect ratio, and to be cropped in a way that maintains the essence of the product.
-- To not have multiples of the same image displayed on the page at the same time.  
-- To keep track of the number of clicks each image receives in the image's object and use event handling to record the participant's clicks on an image.
-- To design the app with a readable custom font and color palette that is neutral.
+- to implement a constructor function, so that I can reuse code and eliminate duplication in my JavaScript.
+- to use object oriented programming to build this app so that the app will be more effective and code will be easier to read and understand.
+- the images that are displayed on the page to have the same dimensions, aspect ratio, and to be cropped in a way that maintains the essence of the product.
+- to not have multiples of the same image displayed on the page at the same time.  
+- to keep track of the number of clicks each image receives in the image's object and use event handling to record the participant's clicks on an image.
+- to design the app with a readable custom font and color palette that is neutral.
+- to have a button that populates the random images on the screen. There should be no images on the screen until after the participant has read the instructions.  
 
 * As an individual research participant, I want:
 - Clear and concise instructions on exactly what it is I'm supposed to do.

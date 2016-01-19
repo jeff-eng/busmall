@@ -1,0 +1,6 @@
+/* CSS page */
+.products {
+  flex-direction: column;
+  max-height: 400px;
+  max-width: auto;
+}
