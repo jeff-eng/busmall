@@ -25,7 +25,4 @@ var wineglass = new Product('wine glass', 'img/wine-glass.jpg', 0);
 //Put instances of objects into an array
 var productsList = [bag, banana, boots, chair, cthulhu, dragon, pen, scissors, shark, sweep, unicorn, usb, watercan, wineglass];
 
-//Randomizer function - Use index as range of numbers being randomized
-var randomizer = function() {
-  
-}
+//Create an event listener that responds to the click on an image, then records the click to the object and then starts a function that randomly selects another image.  Run a loop?

@@ -1,6 +1,18 @@
-/* CSS page */
-.products {
-  flex-direction: column;
-  max-height: 400px;
-  max-width: auto;
+.productsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.productbox {
+  display: flex;
+  width: 300px;
+  height: 300px;
+}
+
+.productbox > img {
+  width: 250px;
+  height: auto;
+  margin: auto;
+  border-style: solid;
 }
