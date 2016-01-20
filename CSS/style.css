@@ -1,7 +1,12 @@
+* {
+  font-family: sans-serif;
+}
+
 .productsContainer {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border-style: groove;
 }
 
 .productbox1 {
@@ -12,14 +17,14 @@
 
 .productbox2 {
   display: flex;
-  width: 300px;
-  height: 300px;
+  width: 30%;
+  height: 30%;
 }
 
 .productbox3 {
   display: flex;
-  width: 300px;
-  height: 300px;
+  width: 30%;
+  height: 30%;
 }
 
 .productbox > img {
@@ -27,4 +32,17 @@
   height: auto;
   margin: auto;
   border-style: solid;
+}
+
+.resultsContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  font-size: 1.5em;
 }
