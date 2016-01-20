@@ -1,1 +1,6 @@
-# busmall
+BusMall App
+
+**V 1.0 (Monday 1/18/2016)
+- Created the product object constructor function and instances of each object with properties of product name, the image's filepath, and initialized the number of clicks to 0.
+- CSS page to center 3 products being displayed on page.
+- Able to generate 3 random images after clicking on an image
