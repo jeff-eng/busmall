@@ -4,7 +4,19 @@
   justify-content: space-around;
 }
 
-.productbox {
+.productbox1 {
+  display: flex;
+  width: 30%; /*use percentages*/
+  height: 30%;
+}
+
+.productbox2 {
+  display: flex;
+  width: 300px;
+  height: 300px;
+}
+
+.productbox3 {
   display: flex;
   width: 300px;
   height: 300px;
