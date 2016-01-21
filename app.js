@@ -5,7 +5,7 @@ function Product (productName, filePath, clicks, timesDisplayed, percentageClick
   this.filePath = filePath;
   this.clicks = 0;
   this.timesDisplayed = 0;
-  this.percentageClicked = this.clicks/this.timesDisplayed;
+  this.percentageClicked = 0;
 }
 
 //Create instances
@@ -123,7 +123,45 @@ button.addEventListener('click', handleButtonClicked);
 
 var results = document.getElementById('results');
 
-// Function to handle
+// Function to handle button click
 function handleButtonClicked() {
+  console.log('Results button works!')
+  chartMaker();
+}
 
+//Function to generate chart
+function chartMaker() {
+  var products = [];
+  for (var i = 0; i < productsList.length; i++) {
+    products.push(productsList[i].productName);
+  }
+  var clicks = [];
+  for (var i = 0; i < productsList.length; i++) {
+    clicks.push(productsList[i].clicks);
+  }
+  var timesDisplayed = [];
+  for (var i = 0; i < productsList.length; i++) {
+    timesDisplayed.push(productsList[i].timesDisplayed);
+  }
+  var data = {
+    labels: products,
+    datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: clicks //clicks
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: timesDisplayed //timesDisplayed
+        }
+    ]
+};
+var chart = document.getElementById('canvas').getContext('2d');
+new Chart(chart).Bar(data);
 }
