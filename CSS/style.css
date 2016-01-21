@@ -46,3 +46,8 @@ button {
   margin-bottom: 20px;
   font-size: 1.5em;
 }
+
+#results {
+  display: flex;
+  justify-content: center;
+}
