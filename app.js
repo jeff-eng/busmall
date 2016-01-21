@@ -143,6 +143,15 @@ function displayResults() {
 //Event listener for when the 'click for results' button is clicked
 button.addEventListener('click', handleButtonClicked);
 
+var clearLS = document.getElementById('clearLSbutton');
+
+var handleLSClear = function () {
+  console.log('Clearing local storage');
+  localStorage.clear();
+};
+
+clearLS.addEventListener('click',handleLSClear);
+
 var results = document.getElementById('results');
 
 // Function to handle button click
