@@ -1,10 +1,11 @@
 "use strict";
 //Object Constructor for creating product objects
-function Product (productName, filePath, clicks, timesDisplayed) {
+function Product (productName, filePath, clicks, timesDisplayed, percentageClicked) {
   this.productName = productName;
   this.filePath = filePath;
   this.clicks = 0;
   this.timesDisplayed = 0;
+  this.percentageClicked = this.clicks/this.timesDisplayed;
 }
 
 //Create instances
@@ -120,7 +121,9 @@ function displayResults() {
 //Event listener for when the 'click for results' button is clicked
 button.addEventListener('click', handleButtonClicked);
 
-//Function to handle
+var results = document.getElementById('results');
+
+// Function to handle
 function handleButtonClicked() {
 
 }
