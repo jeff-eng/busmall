@@ -1,5 +1,5 @@
 * {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .productsContainer {
@@ -11,30 +11,30 @@
 
 .productbox1 {
   display: flex;
-  width: 30%; /*use percentages*/
-  height: 30%;
+  width: 20%; /*use percentages*/
+  height: 20%;
 }
 
 .productbox2 {
   display: flex;
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
 }
 
 .productbox3 {
   display: flex;
-  width: 30%;
-  height: 30%;
+  width: 20%;
+  height: 20%;
 }
 
 .productbox > img {
-  width: 250px;
+  width: 200px;
   height: auto;
   margin: auto;
   border-style: solid;
 }
 
-.resultsContainer {
+.buttonContainer {
   display: flex;
   flex-direction: row;
 }
@@ -45,4 +45,9 @@ button {
   margin-right: auto;
   margin-bottom: 20px;
   font-size: 1.5em;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
 }

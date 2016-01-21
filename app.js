@@ -1,10 +1,11 @@
 "use strict";
 //Object Constructor for creating product objects
-function Product (productName, filePath, clicks, timesDisplayed) {
+function Product (productName, filePath, clicks, timesDisplayed, percentageClicked) {
   this.productName = productName;
   this.filePath = filePath;
   this.clicks = 0;
   this.timesDisplayed = 0;
+  this.percentageClicked = 0;
 }
 
 //Create instances
@@ -31,21 +32,21 @@ var productLeft = document.getElementById('productLeft');
 var productCenter = document.getElementById('productCenter');
 var productRight = document.getElementById('productRight');
 
-//Create an event listener that responds to the click on an image, then records the click to the object and then starts a function that randomly selects another image.  Run a loop?
+//Create an event listener that responds to the click on an image, then records the click to the object and then starts a function that randomly displays another set of images.
 productLeft.addEventListener('click', handleClickOnProductLeft);
 productCenter.addEventListener('click', handleClickOnProductCenter);
 productRight.addEventListener('click', handleClickOnProductRight);
 
-productRight.src = productsList[0].filePath;
+// productRight.src = productsList[0].filePath;
 
-
-//Declare global variables to store the random numbers generated within the function
+//Declare global variables to store the random numbers generated within the randomMaker function
 var randomNumLeft, randomNumCenter, randomNumRight;
+//Calls imageMaker function to initially set a group of images when browser window loads
 imageMaker();
-
+//Initialize total clicks to zero
 var totalClicks = 0;
 
-// Creating a function to display a random image from the productsList array.
+// Creating a function to handle click on left product window
 function handleClickOnProductLeft() {
   productsList[randomNumLeft].clicks++;
   console.log('Left was clicked');
@@ -57,6 +58,7 @@ function handleClickOnProductLeft() {
   }
 }
 
+// Creating a function to handle click on center product window
 function handleClickOnProductCenter() {
   productsList[randomNumCenter].clicks++;
   console.log('Center was clicked');
@@ -68,6 +70,7 @@ function handleClickOnProductCenter() {
   }
 }
 
+// Creating a function to handle click on right product window
 function handleClickOnProductRight() {
   productsList[randomNumRight].clicks++;
   console.log('Right was clicked');
@@ -107,8 +110,58 @@ function imageMaker() {
   productsList[randomNumRight].timesDisplayed++;
 }
 
+//Declare button variable so it can be used multiple times
+var button = document.getElementById('button');
+
 //Function that displays results after total number of clicks is reached
 function displayResults() {
-  var button = document.getElementById('button');
   button.removeAttribute('hidden');
+}
+
+//Event listener for when the 'click for results' button is clicked
+button.addEventListener('click', handleButtonClicked);
+
+var results = document.getElementById('results');
+
+// Function to handle button click
+function handleButtonClicked() {
+  console.log('Results button works!')
+  chartMaker();
+}
+
+//Function to generate chart
+function chartMaker() {
+  var products = [];
+  for (var i = 0; i < productsList.length; i++) {
+    products.push(productsList[i].productName);
+  }
+  var clicks = [];
+  for (var i = 0; i < productsList.length; i++) {
+    clicks.push(productsList[i].clicks);
+  }
+  var timesDisplayed = [];
+  for (var i = 0; i < productsList.length; i++) {
+    timesDisplayed.push(productsList[i].timesDisplayed);
+  }
+  var data = {
+    labels: products,
+    datasets: [
+        {
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: clicks //clicks
+        },
+        {
+            fillColor: "rgba(151,187,205,0.5)",
+            strokeColor: "rgba(151,187,205,0.8)",
+            highlightFill: "rgba(151,187,205,0.75)",
+            highlightStroke: "rgba(151,187,205,1)",
+            data: timesDisplayed //timesDisplayed
+        }
+    ]
+};
+var chart = document.getElementById('canvas').getContext('2d');
+new Chart(chart).Bar(data);
 }
