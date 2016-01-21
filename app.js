@@ -1,11 +1,10 @@
 "use strict";
 //Object Constructor for creating product objects
-function Product (productName, filePath, clicks, timesDisplayed, percentageClicked) {
+function Product (productName, filePath, clicks, timesDisplayed) {
   this.productName = productName;
   this.filePath = filePath;
   this.clicks = 0;
   this.timesDisplayed = 0;
-  this.percentageClicked = 0;
 }
 
 //Create instances
