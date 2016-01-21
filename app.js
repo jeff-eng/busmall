@@ -43,15 +43,26 @@ var randomNumLeft, randomNumCenter, randomNumRight;
 //Calls imageMaker function to initially set a group of images when browser window loads
 imageMaker();
 //Initialize total clicks to zero
-var totalClicks = 0;
+var clickData = localStorage.getItem('clickPersist')
+if (clickData) {
+  totalClicks = parseInt(localStorage.getItem('clickPersist'));
+} else {
+  var totalClicks = 0;
+}
 
 // Creating a function to handle click on left product window
 function handleClickOnProductLeft() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumLeft].clicks++;
   console.log('Left was clicked');
   imageMaker();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist',JSON.stringify(productsList));
+  localStorage.setItem('clickPersist',totalClicks);
   if (totalClicks === 15) {
     displayResults();
   }
@@ -59,11 +70,17 @@ function handleClickOnProductLeft() {
 
 // Creating a function to handle click on center product window
 function handleClickOnProductCenter() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumCenter].clicks++;
   console.log('Center was clicked');
   imageMaker();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist',JSON.stringify(productsList));
+  localStorage.setItem('clickPersist',totalClicks);
   if (totalClicks === 15) {
     displayResults();
   }
@@ -71,11 +88,17 @@ function handleClickOnProductCenter() {
 
 // Creating a function to handle click on right product window
 function handleClickOnProductRight() {
+  if (totalClicks > 0) {
+    productsList = JSON.parse(localStorage.getItem('chartPersist'));
+    totalClicks = parseInt(localStorage.getItem('clickPersist'));
+  }
   productsList[randomNumRight].clicks++;
   console.log('Right was clicked');
   imageMaker();
   totalClicks += 1;
   console.log('The total number of clicks is ' + totalClicks);
+  localStorage.setItem('chartPersist',JSON.stringify(productsList));
+  localStorage.setItem('clickPersist',totalClicks);
   if (totalClicks === 15) {
     displayResults();
   }
