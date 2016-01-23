@@ -9,3 +9,7 @@ BusMall App
 - Finished generating 3 random images without duplicates
 - Added click for results button and event handler for the button
 - Added chart.js file and added canvas element to index.html. Chart displays on page with data from clicks on products and total times product displayed.
+
+**V 1.2 (Thursday 1/21/2016)
+-Added local storage functionality
+-Driver: Joe McClenahan
