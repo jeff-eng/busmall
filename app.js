@@ -100,13 +100,13 @@ function handleClickOnProductRight() {
   }
 }
 
-//Reusable function to creates a random integer
+//Generates a random integer
 function randoMaker() {
   var randomNumber = Math.floor(Math.random() * productsList.length);
   return randomNumber;
 }
 
-//Function to create a set of 3 unique images on the screen and log how many times the image displayed
+//Function to create a set of 3 different images on the screen and log how many times the image displayed
 function imageMaker() {
   randomNumLeft = randoMaker();
   console.log(randomNumLeft);
@@ -128,21 +128,26 @@ function imageMaker() {
   productsList[randomNumRight].timesDisplayed++;
 }
 
-//Declare button variable so it can be used multiple times
 var button = document.getElementById('button');
+var clearLS = document.getElementById('clearLSbutton');
+var resetPage = document.getElementById('reset')
+var pElUnhide = document.getElementById('admin')
 //Function that displays results after total number of clicks is reached
 function displayResults() {
   button.removeAttribute('hidden');
+  clearLS.removeAttribute('hidden');
+  resetPage.removeAttribute('hidden');
+  pElUnhide.removeAttribute('hidden');
 }
 
 //Event listener for when the 'click for results' button is clicked
 button.addEventListener('click', handleButtonClicked);
-var clearLS = document.getElementById('clearLSbutton');
 var handleLSClear = function () {
   console.log('Clearing local storage');
   localStorage.clear();
 };
 clearLS.addEventListener('click',handleLSClear);
+resetPage.addEventListener('click', reloadPage);
 
 //Function to generate chart
 function chartMaker() {
@@ -186,4 +191,8 @@ var results = document.getElementById('results');
 function handleButtonClicked() {
   console.log('Results button works!')
   chartMaker();
+}
+
+function reloadPage() {
+  window.location.reload();
 }

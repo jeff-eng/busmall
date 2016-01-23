@@ -45,10 +45,10 @@ h1 {
 }
 
 button {
-  margin-top: 50px;
+  margin-top: 5px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   font-size: 1em;
   border-radius: 10px;
 }
@@ -56,4 +56,9 @@ button {
 #results {
   display: flex;
   justify-content: center;
+}
+
+.adminfunctions {
+  border-style: solid;
+  margin: none;
 }
