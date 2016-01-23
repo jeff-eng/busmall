@@ -36,13 +36,11 @@ productLeft.addEventListener('click', handleClickOnProductLeft);
 productCenter.addEventListener('click', handleClickOnProductCenter);
 productRight.addEventListener('click', handleClickOnProductRight);
 
-// productRight.src = productsList[0].filePath;
-
 //Declare global variables to store the random numbers generated within the randomMaker function
 var randomNumLeft, randomNumCenter, randomNumRight;
 //Calls imageMaker function to initially set a group of images when browser window loads
 imageMaker();
-//Initialize total clicks to zero
+
 var clickData = localStorage.getItem('clickPersist')
 if (clickData) {
   totalClicks = parseInt(localStorage.getItem('clickPersist'));
@@ -67,7 +65,6 @@ function handleClickOnProductLeft() {
     displayResults();
   }
 }
-
 // Creating a function to handle click on center product window
 function handleClickOnProductCenter() {
   if (totalClicks > 0) {
@@ -85,7 +82,6 @@ function handleClickOnProductCenter() {
     displayResults();
   }
 }
-
 // Creating a function to handle click on right product window
 function handleClickOnProductRight() {
   if (totalClicks > 0) {
@@ -134,7 +130,6 @@ function imageMaker() {
 
 //Declare button variable so it can be used multiple times
 var button = document.getElementById('button');
-
 //Function that displays results after total number of clicks is reached
 function displayResults() {
   button.removeAttribute('hidden');
@@ -142,23 +137,12 @@ function displayResults() {
 
 //Event listener for when the 'click for results' button is clicked
 button.addEventListener('click', handleButtonClicked);
-
 var clearLS = document.getElementById('clearLSbutton');
-
 var handleLSClear = function () {
   console.log('Clearing local storage');
   localStorage.clear();
 };
-
 clearLS.addEventListener('click',handleLSClear);
-
-var results = document.getElementById('results');
-
-// Function to handle button click
-function handleButtonClicked() {
-  console.log('Results button works!')
-  chartMaker();
-}
 
 //Function to generate chart
 function chartMaker() {
@@ -195,4 +179,11 @@ function chartMaker() {
 };
 var chart = document.getElementById('canvas').getContext('2d');
 new Chart(chart).Bar(data);
+}
+
+var results = document.getElementById('results');
+// Function to handle button click
+function handleButtonClicked() {
+  console.log('Results button works!')
+  chartMaker();
 }
