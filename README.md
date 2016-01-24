@@ -13,3 +13,7 @@ BusMall App
 **V 1.2 (Thursday 1/21/2016)
 -Added local storage functionality
 -Driver: Joe McClenahan
+
+**V 1.3 (Friday 1/22/2016 and Saturday)
+-Added an Admin Utility Toolbox
+-UI Refinements
