@@ -8,20 +8,20 @@ function Product (productName, filePath, clicks, timesDisplayed) {
 }
 
 //Create instances
-var bag = new Product('bag', 'img/bag.jpg');
-var banana = new Product('banana', 'img/banana.jpg');
-var boots = new Product('boots', 'img/boots.jpg');
-var chair = new Product('chair', 'img/chair.jpg');
-var cthulhu = new Product('cthulhu', 'img/cthulhu.jpg');
-var dragon = new Product('dragon', 'img/dragon.jpg');
-var pen = new Product('pen', 'img/pen.jpg');
-var scissors = new Product('scissors', 'img/scissors.jpg');
-var shark = new Product('shark', 'img/shark.jpg');
-var sweep = new Product('sweep', 'img/sweep.png');
-var unicorn = new Product('unicorn', 'img/unicorn.jpg');
-var usb = new Product('usb', 'img/usb.gif');
-var watercan = new Product('water can', 'img/water-can.jpg');
-var wineglass = new Product('wine glass', 'img/wine-glass.jpg');
+var bag = new Product('bag', 'IMG/bag.jpg');
+var banana = new Product('banana', 'IMG/banana.jpg');
+var boots = new Product('boots', 'IMG/boots.jpg');
+var chair = new Product('chair', 'IMG/chair.jpg');
+var cthulhu = new Product('cthulhu', 'IMG/cthulhu.jpg');
+var dragon = new Product('dragon', 'IMG/dragon.jpg');
+var pen = new Product('pen', 'IMG/pen.jpg');
+var scissors = new Product('scissors', 'IMG/scissors.jpg');
+var shark = new Product('shark', 'IMG/shark.jpg');
+var sweep = new Product('sweep', 'IMG/sweep.png');
+var unicorn = new Product('unicorn', 'IMG/unicorn.jpg');
+var usb = new Product('usb', 'IMG/usb.gif');
+var watercan = new Product('water can', 'IMG/water-can.jpg');
+var wineglass = new Product('wine glass', 'IMG/wine-glass.jpg');
 
 //Put instances of objects into an array
 var productsList = [bag, banana, boots, chair, cthulhu, dragon, pen, scissors, shark, sweep, unicorn, usb, watercan, wineglass];
