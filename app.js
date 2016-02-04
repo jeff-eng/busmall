@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 //Object Constructor for creating product objects
 function Product (productName, filePath, clicks, timesDisplayed) {
   this.productName = productName;
@@ -41,7 +41,7 @@ var randomNumLeft, randomNumCenter, randomNumRight;
 //Calls imageMaker function to initially set a group of images when browser window loads
 imageMaker();
 
-var clickData = localStorage.getItem('clickPersist')
+var clickData = localStorage.getItem('clickPersist');
 if (clickData) {
   totalClicks = parseInt(localStorage.getItem('clickPersist'));
 } else {
@@ -130,8 +130,8 @@ function imageMaker() {
 
 var button = document.getElementById('button');
 var clearLS = document.getElementById('clearLSbutton');
-var resetPage = document.getElementById('reset')
-var pElUnhide = document.getElementById('admin')
+var resetPage = document.getElementById('reset');
+var pElUnhide = document.getElementById('admin');
 //Function that displays results after total number of clicks is reached
 function displayResults() {
   button.removeAttribute('hidden');
@@ -166,30 +166,30 @@ function chartMaker() {
   var data = {
     labels: products,
     datasets: [
-        {
-            fillColor: "rgba(220,220,220,0.5)",
-            strokeColor: "rgba(220,220,220,0.8)",
-            highlightFill: "rgba(220,220,220,0.75)",
-            highlightStroke: "rgba(220,220,220,1)",
-            data: clicks //clicks
-        },
-        {
-            fillColor: "rgba(151,187,205,0.5)",
-            strokeColor: "rgba(151,187,205,0.8)",
-            highlightFill: "rgba(151,187,205,0.75)",
-            highlightStroke: "rgba(151,187,205,1)",
-            data: timesDisplayed //timesDisplayed
-        }
+      {
+        fillColor: 'rgba(220,220,220,0.5)',
+        strokeColor: 'rgba(220,220,220,0.8)',
+        highlightFill: 'rgba(220,220,220,0.75)',
+        highlightStroke: 'rgba(220,220,220,1)',
+        data: clicks //clicks
+      },
+      {
+        fillColor: 'rgba(151,187,205,0.5)',
+        strokeColor: 'rgba(151,187,205,0.8)',
+        highlightFill: 'rgba(151,187,205,0.75)',
+        highlightStroke: 'rgba(151,187,205,1)',
+        data: timesDisplayed //timesDisplayed
+      }
     ]
-};
-var chart = document.getElementById('canvas').getContext('2d');
-new Chart(chart).Bar(data);
+  };
+  var chart = document.getElementById('canvas').getContext('2d');
+  new Chart(chart).Bar(data);
 }
 
 var results = document.getElementById('results');
 // Function to handle button click
 function handleButtonClicked() {
-  console.log('Results button works!')
+  console.log('Results button works!');
   chartMaker();
 }
 
